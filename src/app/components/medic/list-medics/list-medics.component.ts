@@ -35,4 +35,13 @@ export class ListMedicsComponent implements OnInit {
     return this.specialties ? this.specialties.find(s => s.id === id) : null;
   }
 
+  deleteMedic(id: Medic['id']): void {
+    this.medicService.deleteMedic(id).subscribe(
+      (res) => {
+        alert(res.msg);
+        window.location.reload();
+      }
+    )
+  }
+
 }

@@ -8,7 +8,7 @@
           <i>Especialidade:</i> {{ getSpecialtyById(medic.idEspecialidade) ? getSpecialtyById(medic.idEspecialidade).nome : "Carregando..."}}
         </div>
         <span><button class="btn btn-warning edit-btn" routerLink="./edit/{{medic.id}}">Editar</button></span>
-        <span><button class="btn btn-danger">Excluir</button></span>
+        <span><button (click)="deleteMedic(medic.id)" class="btn btn-danger">Excluir</button></span>
       </li>
     </ul>
     <button class="btn btn-primary mt-4" routerLink="./new">Novo Médico</button>

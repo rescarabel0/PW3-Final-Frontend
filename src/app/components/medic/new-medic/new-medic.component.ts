@@ -41,7 +41,7 @@ export class NewMedicComponent implements OnInit {
       (res: Medic) => {
         if (res && res.id) {
           alert(`Médico #${res.id} salvo com sucesso.`);
-          this.router.navigateByUrl("../");
+          this.router.navigate(["../"]);
         } else {
           alert("Erro ao salvar.");
         }
