@@ -7,7 +7,7 @@ import {FormGroup} from "@angular/forms";
   providedIn: 'root'
 })
 export class UserService {
-  private url = "https://tiagoifsp.ddns.net/clinicaMedicaJWT/";
+  private url = "https://tiagoifsp.ddns.net/clinicaMedicaJWT/administradores.php";
 
   constructor(private http: HttpClient) {
   }
@@ -17,7 +17,7 @@ export class UserService {
       .set("login", formBody.login)
       .set("senha", formBody.senha);
 
-    return this.http.put(this.url + "administradores.php", body);
+    return this.http.put(this.url, body);
   }
 
   login(formBody: FormGroup['value']): Observable<any> {
@@ -25,6 +25,6 @@ export class UserService {
       .set("login", formBody.login)
       .set("senha", formBody.senha);
 
-    return this.http.post(this.url + "administradores.php", body);
+    return this.http.post(this.url, body);
   }
 }

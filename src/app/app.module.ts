@@ -8,12 +8,16 @@ import {SignUpComponent} from './components/auth/sign-up/sign-up.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from './components/auth/login/login.component';
+import {ListPatientsComponent} from './components/patient/list-patients/list-patients.component';
+import {NewPatientComponent} from './components/patient/new-patient/new-patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    ListPatientsComponent,
+    NewPatientComponent
   ],
   imports: [
     BrowserModule,

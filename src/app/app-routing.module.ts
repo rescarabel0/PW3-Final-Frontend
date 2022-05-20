@@ -2,19 +2,31 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SignUpComponent} from "./components/auth/sign-up/sign-up.component";
 import {LoginComponent} from "./components/auth/login/login.component";
+import {ListPatientsComponent} from "./components/patient/list-patients/list-patients.component";
+import {AuthGuard} from "./guards/auth.guard";
+import {NewPatientComponent} from "./components/patient/new-patient/new-patient.component";
 
 const routes: Routes = [
-  {
-    path: "auth", children: [
-      {path: "", pathMatch: "full", redirectTo: "login"},
-      {path: "sign-up", component: SignUpComponent},
-      {path: "login", component: LoginComponent}
-    ]
-  }
-];
+    {
+      path: "auth", children: [
+        {path: "", pathMatch: "full", redirectTo: "login"},
+        {path: "sign-up", component: SignUpComponent},
+        {path: "login", component: LoginComponent}
+      ]
+    },
+    {path: "", pathMatch: "full", redirectTo: "patients"},
+    {
+      path: "patients", children: [
+        {path: "", pathMatch: "full", component: ListPatientsComponent},
+        {path: "new", component: NewPatientComponent}
+      ], canActivate: [AuthGuard]
+    }
+  ]
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
