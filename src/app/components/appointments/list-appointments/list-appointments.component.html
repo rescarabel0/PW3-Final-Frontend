@@ -1,0 +1,28 @@
+<section class="container mt-5">
+  <h3>Consultas agendadas:</h3>
+  <div *ngIf="!loading else loadingIcon" class="content">
+    <ul class="list-group mt-3">
+      <li *ngFor="let appointment of appointments"
+          class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div><b>Médico responsável:</b> {{getMedicById(appointment.idMedico).nome}}</div>
+          <div><b>Paciente:</b> {{getPatientById(appointment.idPaciente).nome}}</div>
+          <i>Data da consulta:</i> {{appointment.data | date:"dd/MM/YYYY"}}
+        </div>
+        <span><button class="btn btn-warning edit-btn" routerLink="./edit/{{appointment.id}}">Editar</button></span>
+        <span><button class="btn btn-danger">Excluir</button></span>
+      </li>
+    </ul>
+    <button class="btn btn-primary mt-4" routerLink="./new">Nova Consulta</button>
+  </div>
+</section>
+
+<ng-template #loadingIcon>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -9,6 +9,7 @@ import {EditPatientComponent} from "./components/patient/edit-patient/edit-patie
 import {ListMedicsComponent} from "./components/medic/list-medics/list-medics.component";
 import {NewMedicComponent} from "./components/medic/new-medic/new-medic.component";
 import {EditMedicComponent} from "./components/medic/edit-medic/edit-medic.component";
+import {ListAppointmentsComponent} from "./components/appointments/list-appointments/list-appointments.component";
 
 const routes: Routes = [
     {
@@ -31,6 +32,11 @@ const routes: Routes = [
         {path: "", pathMatch: "full", component: ListMedicsComponent},
         {path: "new", component: NewMedicComponent},
         {path: "edit/:id", component: EditMedicComponent}
+      ], canActivate: [AuthGuard]
+    },
+    {
+      path: "appointments", children: [
+        {path: "", pathMatch: "full", component: ListAppointmentsComponent}
       ], canActivate: [AuthGuard]
     }
   ]

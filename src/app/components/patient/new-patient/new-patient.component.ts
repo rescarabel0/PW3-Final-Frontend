@@ -15,7 +15,7 @@ export class NewPatientComponent implements OnInit {
   constructor(private fb: FormBuilder, private patientService: PatientService, private router: Router) {
     this.form = fb.group({
       nome: ['', Validators.required],
-      dataNascimento: ['', [Validators.required, DateValidator.afterToday]]
+      dataNascimento: ['', [Validators.required, DateValidator.beforeToday]]
     })
   }
 

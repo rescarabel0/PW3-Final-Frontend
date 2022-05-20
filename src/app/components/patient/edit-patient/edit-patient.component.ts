@@ -26,7 +26,7 @@ export class EditPatientComponent implements OnInit {
         if (foundPatient) {
           this.form = fb.group({
             nome: [foundPatient.nome, Validators.required],
-            dataNascimento: [foundPatient.dataNascimento, [Validators.required, DateValidator.afterToday]]
+            dataNascimento: [foundPatient.dataNascimento, [Validators.required, DateValidator.beforeToday]]
           })
         } else {
           alert("Informe um id válido!");
