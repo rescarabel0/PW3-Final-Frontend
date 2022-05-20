@@ -11,6 +11,8 @@ import {LoginComponent} from './components/auth/login/login.component';
 import {ListPatientsComponent} from './components/patient/list-patients/list-patients.component';
 import {NewPatientComponent} from './components/patient/new-patient/new-patient.component';
 import {EditPatientComponent} from './components/patient/edit-patient/edit-patient.component';
+import {ListMedicsComponent} from './components/medic/list-medics/list-medics.component';
+import {NewMedicComponent} from './components/medic/new-medic/new-medic.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {EditPatientComponent} from './components/patient/edit-patient/edit-patie
     LoginComponent,
     ListPatientsComponent,
     NewPatientComponent,
-    EditPatientComponent
+    EditPatientComponent,
+    ListMedicsComponent,
+    NewMedicComponent
   ],
   imports: [
     BrowserModule,
@@ -32,4 +36,5 @@ import {EditPatientComponent} from './components/patient/edit-patient/edit-patie
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

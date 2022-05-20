@@ -6,6 +6,8 @@ import {ListPatientsComponent} from "./components/patient/list-patients/list-pat
 import {AuthGuard} from "./guards/auth.guard";
 import {NewPatientComponent} from "./components/patient/new-patient/new-patient.component";
 import {EditPatientComponent} from "./components/patient/edit-patient/edit-patient.component";
+import {ListMedicsComponent} from "./components/medic/list-medics/list-medics.component";
+import {NewMedicComponent} from "./components/medic/new-medic/new-medic.component";
 
 const routes: Routes = [
     {
@@ -21,6 +23,12 @@ const routes: Routes = [
         {path: "", pathMatch: "full", component: ListPatientsComponent},
         {path: "new", component: NewPatientComponent},
         {path: "edit/:id", component: EditPatientComponent}
+      ], canActivate: [AuthGuard]
+    },
+    {
+      path: "medics", children: [
+        {path: "", pathMatch: "full", component: ListMedicsComponent},
+        {path: "new", component: NewMedicComponent}
       ], canActivate: [AuthGuard]
     }
   ]
