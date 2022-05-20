@@ -25,4 +25,18 @@ export class ListPatientsComponent implements OnInit {
       )
   }
 
+  deletePatient(id: Patient['id']): void {
+    this.patientService.deletePatient(id).subscribe(
+      (res) => {
+        if (res.status && res.status === "OK") {
+          alert(res.msg);
+          window.location.reload();
+        } else if (res.status === "Erro") {
+          alert(res.msg);
+          return;
+        }
+      }
+    )
+  }
+
 }

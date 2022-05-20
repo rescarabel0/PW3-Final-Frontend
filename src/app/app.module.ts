@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from './components/auth/login/login.component';
 import {ListPatientsComponent} from './components/patient/list-patients/list-patients.component';
 import {NewPatientComponent} from './components/patient/new-patient/new-patient.component';
+import {EditPatientComponent} from './components/patient/edit-patient/edit-patient.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {NewPatientComponent} from './components/patient/new-patient/new-patient.
     SignUpComponent,
     LoginComponent,
     ListPatientsComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    EditPatientComponent
   ],
   imports: [
     BrowserModule,

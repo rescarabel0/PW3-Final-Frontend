@@ -7,8 +7,8 @@
           <div><b>Nome:</b> {{patient.nome | titlecase}}</div>
           <i>Data de Nascimento:</i> {{patient.dataNascimento | date:"dd/MM/YYYY"}}
         </div>
-        <span><button class="btn btn-warning edit-btn">Editar</button></span>
-        <span><button class="btn btn-danger">Excluir</button></span>
+        <span><button class="btn btn-warning edit-btn" routerLink="./edit/{{patient.id}}">Editar</button></span>
+        <span><button (click)="deletePatient(patient.id)" class="btn btn-danger">Excluir</button></span>
       </li>
     </ul>
     <button class="btn btn-primary mt-4" routerLink="./new">Novo Paciente</button>
