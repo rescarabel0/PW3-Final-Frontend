@@ -1,0 +1,26 @@
+<section class="container mt-5">
+  <h3>Cadastre-se:</h3>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label" for="login">Login:</label>
+      <input [ngClass]="{'is-invalid': form.controls.login.invalid && form.controls.login.touched}"
+             class="form-control" formControlName="login"
+             id="login" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="password">Senha: </label>
+      <input [ngClass]="{'is-invalid': form.controls.senha.invalid && form.controls.senha.touched}"
+             class="form-control" formControlName="senha"
+             id="password" type="password">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="password-confirm">Confirmar senha: </label>
+      <input
+        [ngClass]="{'is-invalid': form.controls.senha.dirty && form.controls.senha.value !== form.controls.confirm.value}"
+        class="form-control"
+        formControlName="confirm" id="password-confirm" type="password">
+    </div>
+    <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Cadastrar</button>
+  </form>
+
+</section>
