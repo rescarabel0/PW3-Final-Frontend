@@ -31,4 +31,14 @@ export class AppointmentService {
   deleteAppointment(id: Appointment['id']): Observable<any> {
     return this.http.delete(this.url + `?id=${id}`, {headers: this.headers})
   }
+
+  editAppointment(id: Appointment['id'], formBody: FormGroup['value']): Observable<Appointment> {
+    const body = new HttpParams()
+      .set("id", id)
+      .set("idPaciente", formBody.idPaciente)
+      .set("idMedico", formBody.idMedico)
+      .set("data", formBody.data);
+
+    return this.http.put<Appointment>(this.url, body, {headers: this.headers});
+  }
 }

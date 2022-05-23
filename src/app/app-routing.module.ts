@@ -11,26 +11,27 @@ import {NewMedicComponent} from "./components/medic/new-medic/new-medic.componen
 import {EditMedicComponent} from "./components/medic/edit-medic/edit-medic.component";
 import {ListAppointmentsComponent} from "./components/appointments/list-appointments/list-appointments.component";
 import {NewAppointmentComponent} from "./components/appointments/new-appointment/new-appointment.component";
+import {EditAppointmentComponent} from "./components/appointments/edit-appointment/edit-appointment.component";
 
 const routes: Routes = [
-    {
-      path: "auth", children: [
-        {path: "", pathMatch: "full", redirectTo: "login"},
-        {path: "sign-up", component: SignUpComponent},
-        {path: "login", component: LoginComponent}
-      ]
-    },
-    {path: "", pathMatch: "full", redirectTo: "patients"},
-    {
-      path: "patients", children: [
-        {path: "", pathMatch: "full", component: ListPatientsComponent},
-        {path: "new", component: NewPatientComponent},
-        {path: "edit/:id", component: EditPatientComponent}
-      ], canActivate: [AuthGuard]
-    },
-    {
-      path: "medics", children: [
-        {path: "", pathMatch: "full", component: ListMedicsComponent},
+  {
+    path: "auth", children: [
+      {path: "", pathMatch: "full", redirectTo: "login"},
+      {path: "sign-up", component: SignUpComponent},
+      {path: "login", component: LoginComponent}
+    ]
+  },
+  {path: "", pathMatch: "full", redirectTo: "appointments"},
+  {
+    path: "patients", children: [
+      {path: "", pathMatch: "full", component: ListPatientsComponent},
+      {path: "new", component: NewPatientComponent},
+      {path: "edit/:id", component: EditPatientComponent}
+    ], canActivate: [AuthGuard]
+  },
+  {
+    path: "medics", children: [
+      {path: "", pathMatch: "full", component: ListMedicsComponent},
         {path: "new", component: NewMedicComponent},
         {path: "edit/:id", component: EditMedicComponent}
       ], canActivate: [AuthGuard]
@@ -38,7 +39,8 @@ const routes: Routes = [
     {
       path: "appointments", children: [
         {path: "", pathMatch: "full", component: ListAppointmentsComponent},
-        {path: "new", component: NewAppointmentComponent}
+        {path: "new", component: NewAppointmentComponent},
+        {path: "edit/:id", component: EditAppointmentComponent}
       ], canActivate: [AuthGuard]
     }
   ]
