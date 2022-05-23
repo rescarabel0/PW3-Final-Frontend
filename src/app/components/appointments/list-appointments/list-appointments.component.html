@@ -10,7 +10,7 @@
           <i>Data da consulta:</i> {{appointment.data | date:"dd/MM/YYYY"}}
         </div>
         <span><button class="btn btn-warning edit-btn" routerLink="./edit/{{appointment.id}}">Editar</button></span>
-        <span><button class="btn btn-danger">Excluir</button></span>
+        <span><button (click)="deleteAppointment(appointment.id)" class="btn btn-danger">Excluir</button></span>
       </li>
     </ul>
     <button class="btn btn-primary mt-4" routerLink="./new">Nova Consulta</button>

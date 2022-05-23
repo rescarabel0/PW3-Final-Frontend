@@ -10,6 +10,7 @@ import {ListMedicsComponent} from "./components/medic/list-medics/list-medics.co
 import {NewMedicComponent} from "./components/medic/new-medic/new-medic.component";
 import {EditMedicComponent} from "./components/medic/edit-medic/edit-medic.component";
 import {ListAppointmentsComponent} from "./components/appointments/list-appointments/list-appointments.component";
+import {NewAppointmentComponent} from "./components/appointments/new-appointment/new-appointment.component";
 
 const routes: Routes = [
     {
@@ -36,7 +37,8 @@ const routes: Routes = [
     },
     {
       path: "appointments", children: [
-        {path: "", pathMatch: "full", component: ListAppointmentsComponent}
+        {path: "", pathMatch: "full", component: ListAppointmentsComponent},
+        {path: "new", component: NewAppointmentComponent}
       ], canActivate: [AuthGuard]
     }
   ]

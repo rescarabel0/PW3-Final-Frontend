@@ -27,4 +27,8 @@ export class AppointmentService {
 
     return this.http.post<Appointment>(this.url, body, {headers: this.headers});
   }
+
+  deleteAppointment(id: Appointment['id']): Observable<any> {
+    return this.http.delete(this.url + `?id=${id}`, {headers: this.headers})
+  }
 }

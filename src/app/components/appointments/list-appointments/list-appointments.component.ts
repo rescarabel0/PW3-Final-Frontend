@@ -48,4 +48,14 @@ export class ListAppointmentsComponent implements OnInit {
     return this.patients.find(m => m.id === id);
   }
 
+  deleteAppointment(id: Appointment['id']): void {
+    this.appointmentService.deleteAppointment(id).subscribe(
+      (res) => {
+        alert(res.msg);
+        window.location.reload();
+      }, (err) => {
+        alert(err.msg);
+      }
+    )
+  }
 }
