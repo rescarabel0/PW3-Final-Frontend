@@ -16,6 +16,7 @@ import {NewMedicComponent} from './components/medic/new-medic/new-medic.componen
 import {EditMedicComponent} from './components/medic/edit-medic/edit-medic.component';
 import {ListAppointmentsComponent} from './components/appointments/list-appointments/list-appointments.component';
 import {NewAppointmentComponent} from './components/appointments/new-appointment/new-appointment.component';
+import {EditAppointmentComponent} from './components/appointments/edit-appointment/edit-appointment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {NewAppointmentComponent} from './components/appointments/new-appointment
     NewMedicComponent,
     EditMedicComponent,
     ListAppointmentsComponent,
-    NewAppointmentComponent
+    NewAppointmentComponent,
+    EditAppointmentComponent
   ],
   imports: [
     BrowserModule,
