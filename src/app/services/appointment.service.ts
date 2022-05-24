@@ -19,26 +19,26 @@ export class AppointmentService {
     return this.http.get<Appointment[]>(this.url, {headers: this.headers});
   }
 
-  saveNewAppointment(formBody: FormGroup['value']): Observable<Appointment> {
+  saveNewAppointment(formBody: FormGroup['value']): Observable<any> {
     const body = new HttpParams()
       .set("idPaciente", formBody.idPaciente)
       .set("idMedico", formBody.idMedico)
       .set("data", formBody.data);
 
-    return this.http.post<Appointment>(this.url, body, {headers: this.headers});
+    return this.http.post<any>(this.url, body, {headers: this.headers});
   }
 
   deleteAppointment(id: Appointment['id']): Observable<any> {
     return this.http.delete(this.url + `?id=${id}`, {headers: this.headers})
   }
 
-  editAppointment(id: Appointment['id'], formBody: FormGroup['value']): Observable<Appointment> {
+  editAppointment(id: Appointment['id'], formBody: FormGroup['value']): Observable<any> {
     const body = new HttpParams()
       .set("id", id)
       .set("idPaciente", formBody.idPaciente)
       .set("idMedico", formBody.idMedico)
-      .set("data", formBody.data);
+      .set("data", formBody.data.replace("T", " "));
 
-    return this.http.put<Appointment>(this.url, body, {headers: this.headers});
+    return this.http.put<any>(this.url, body, {headers: this.headers});
   }
 }

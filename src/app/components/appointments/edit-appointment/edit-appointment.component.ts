@@ -72,12 +72,13 @@ export class EditAppointmentComponent implements OnInit {
       alert("Preencha o formulário corretamente.");
       return;
     }
-    this.form.controls.data.setValue(this.form.controls.data.value.replace("T", " "));
     this.appointmentService.editAppointment(this.appointmentId, this.form.value).subscribe(
       (res) => {
         if (res && res.id) {
           alert(`Consulta ${res.id} editada com sucesso.`);
           this.router.navigate(["/appointments"]);
+        } else {
+          alert(res.msg);
         }
       }
     )

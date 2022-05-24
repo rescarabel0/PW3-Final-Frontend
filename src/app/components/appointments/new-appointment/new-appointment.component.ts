@@ -51,15 +51,16 @@ export class NewAppointmentComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.invalid) {
-      alert("Preencha o forulário corretamente!");
+      alert("Preencha o formulário corretamente!");
       return;
     }
-    this.form.controls.data.setValue(this.form.controls.data.value.replace("T", " "));
     this.appointmentService.saveNewAppointment(this.form.value).subscribe(
       (res) => {
         if (res && res.id) {
           alert(`Consulta em ${res.data} agendada com sucesso!`);
           this.router.navigate(['/appointments'])
+        } else {
+          alert(res.msg);
         }
       }
     )

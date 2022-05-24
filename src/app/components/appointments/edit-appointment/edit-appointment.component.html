@@ -22,6 +22,9 @@
       <input [ngClass]="{'is-invalid': form.controls.data.invalid && form.controls.data.touched}" class="form-control"
              formControlName="data" id="date"
              type="datetime-local">
+      <div class="invalid-feedback">
+        Seleciona uma data por vir.
+      </div>
     </div>
     <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Editar</button>
     <button class="btn btn-dark m-2" routerLink="/appointments">Voltar</button>
