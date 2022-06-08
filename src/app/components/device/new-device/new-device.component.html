@@ -1,0 +1,25 @@
+<section class="container mt-5">
+  <h3>Novo Dispositivo:</h3>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label" for="model">Modelo:</label>
+      <input [ngClass]="{'is-invalid': form.controls.model.invalid && form.controls.model.touched}"
+             class="form-control" formControlName="model"
+             id="model" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="manufacturer">Fabricante:</label>
+      <input [ngClass]="{'is-invalid': form.controls.manufacturer.invalid && form.controls.manufacturer.touched}"
+             class="form-control" formControlName="manufacturer"
+             id="manufacturer" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="type">Tipo:</label>
+      <input [ngClass]="{'is-invalid': form.controls.type.invalid && form.controls.type.touched}"
+             class="form-control" formControlName="type"
+             id="type" type="text">
+    </div>
+    <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Adicionar</button>
+    <button class="btn btn-dark m-2" routerLink="../">Voltar</button>
+  </form>
+</section>

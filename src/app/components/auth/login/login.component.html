@@ -9,8 +9,8 @@
     </div>
     <div class="mb-3">
       <label class="form-label" for="password">Senha: </label>
-      <input [ngClass]="{'is-invalid': form.controls.senha.invalid && form.controls.senha.touched}"
-             class="form-control" formControlName="senha"
+      <input [ngClass]="{'is-invalid': form.controls.password.invalid && form.controls.password.touched}"
+             class="form-control" formControlName="password"
              id="password" type="password">
     </div>
     <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Entrar</button>

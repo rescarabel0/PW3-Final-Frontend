@@ -1,0 +1,14 @@
+<section class="container mt-5">
+  <h3>Novo cômodo:</h3>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label" for="description">Descrição:</label>
+      <input [ngClass]="{'is-invalid': form.controls.description.invalid && form.controls.description.touched}"
+             class="form-control" formControlName="description"
+             id="description" type="text">
+    </div>
+    <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Adicionar</button>
+    <button class="btn btn-dark m-2" routerLink="../">Voltar</button>
+  </form>
+
+</section>

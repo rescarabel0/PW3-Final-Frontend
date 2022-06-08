@@ -1,0 +1,30 @@
+<section class="container mt-5">
+  <h3>Cômodos cadastrados:</h3>
+  <div *ngIf="!loading else loadingIcon" class="content">
+    <ul class="list-group mt-3">
+      <li *ngFor="let room of rooms" class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div><b>Descrição:</b> {{room.description | titlecase}}</div>
+          <p><b>Dispositivos:</b></p>
+          <ul>
+            <li *ngFor="let device of room.devices">
+              {{device.model}}
+            </li>
+          </ul>
+        </div>
+        <span><button (click)="deleteRoom(room.id)" class="btn btn-danger">Excluir</button></span>
+      </li>
+    </ul>
+    <button class="btn btn-primary mt-4" routerLink="./new">Novo Cômodo</button>
+  </div>
+</section>
+
+<ng-template #loadingIcon>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

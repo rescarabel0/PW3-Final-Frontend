@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.form = fb.group({
       login: ['', Validators.required],
-      senha: ['', Validators.required]
+      password: ['', Validators.required]
     })
   }
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         if (res.token) {
           localStorage.setItem("session", JSON.stringify({
             "access": res.token,
-            "expiry": new Date().getTime() + 5 * 60000
+            "expiry": new Date().getTime() + 86400000
           }));
           alert("Entrou com sucesso! Redirecionando para tela inicial...");
           this.router.navigate(['']);

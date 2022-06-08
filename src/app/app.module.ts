@@ -8,30 +8,22 @@ import {SignUpComponent} from './components/auth/sign-up/sign-up.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from './components/auth/login/login.component';
-import {ListPatientsComponent} from './components/patient/list-patients/list-patients.component';
-import {NewPatientComponent} from './components/patient/new-patient/new-patient.component';
-import {EditPatientComponent} from './components/patient/edit-patient/edit-patient.component';
-import {ListMedicsComponent} from './components/medic/list-medics/list-medics.component';
-import {NewMedicComponent} from './components/medic/new-medic/new-medic.component';
-import {EditMedicComponent} from './components/medic/edit-medic/edit-medic.component';
-import {ListAppointmentsComponent} from './components/appointments/list-appointments/list-appointments.component';
-import {NewAppointmentComponent} from './components/appointments/new-appointment/new-appointment.component';
-import {EditAppointmentComponent} from './components/appointments/edit-appointment/edit-appointment.component';
+import {ListRoomsComponent} from './components/room/list-rooms/list-rooms.component';
+import {NewRoomComponent} from './components/room/new-room/new-room.component';
+import {ListDevicesComponent} from './components/device/list-device/list-devices.component';
+import {NewDeviceComponent} from './components/device/new-device/new-device.component';
+import {DeviceRoomComponent} from './components/device/device-room/device-room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     LoginComponent,
-    ListPatientsComponent,
-    NewPatientComponent,
-    EditPatientComponent,
-    ListMedicsComponent,
-    NewMedicComponent,
-    EditMedicComponent,
-    ListAppointmentsComponent,
-    NewAppointmentComponent,
-    EditAppointmentComponent
+    ListRoomsComponent,
+    NewRoomComponent,
+    ListDevicesComponent,
+    NewDeviceComponent,
+    DeviceRoomComponent,
   ],
   imports: [
     BrowserModule,

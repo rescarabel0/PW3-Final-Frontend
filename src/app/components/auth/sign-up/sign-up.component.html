@@ -2,6 +2,24 @@
   <h3>Cadastre-se:</h3>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div class="mb-3">
+      <label class="form-label" for="name">Nome:</label>
+      <input [ngClass]="{'is-invalid': form.controls.name.invalid && form.controls.name.touched}"
+             class="form-control" formControlName="name"
+             id="name" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="routineStartsAt">Começo da Rotina:</label>
+      <input [ngClass]="{'is-invalid': form.controls.routineStartsAt.invalid && form.controls.routineStartsAt.touched}"
+             class="form-control" formControlName="routineStartsAt"
+             id="routineStartsAt" type="time">
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="routineEndsAt">Fim da Rotina:</label>
+      <input [ngClass]="{'is-invalid': form.controls.routineEndsAt.invalid && form.controls.routineEndsAt.touched}"
+             class="form-control" formControlName="routineEndsAt"
+             id="routineEndsAt" type="time">
+    </div>
+    <div class="mb-3">
       <label class="form-label" for="login">Login:</label>
       <input [ngClass]="{'is-invalid': form.controls.login.invalid && form.controls.login.touched}"
              class="form-control" formControlName="login"
@@ -9,14 +27,14 @@
     </div>
     <div class="mb-3">
       <label class="form-label" for="password">Senha: </label>
-      <input [ngClass]="{'is-invalid': form.controls.senha.invalid && form.controls.senha.touched}"
-             class="form-control" formControlName="senha"
+      <input [ngClass]="{'is-invalid': form.controls.password.invalid && form.controls.password.touched}"
+             class="form-control" formControlName="password"
              id="password" type="password">
     </div>
     <div class="mb-3">
       <label class="form-label" for="password-confirm">Confirmar senha: </label>
       <input
-        [ngClass]="{'is-invalid': form.controls.senha.dirty && form.controls.senha.value !== form.controls.confirm.value}"
+        [ngClass]="{'is-invalid': form.controls.password.dirty && form.controls.password.value !== form.controls.confirm.value}"
         class="form-control"
         formControlName="confirm" id="password-confirm" type="password">
     </div>

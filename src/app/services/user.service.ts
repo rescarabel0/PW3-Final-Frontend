@@ -7,24 +7,16 @@ import {FormGroup} from "@angular/forms";
   providedIn: 'root'
 })
 export class UserService {
-  private url = "https://tiagoifsp.ddns.net/clinicaMedicaJWT/administradores.php";
+  private url = "http://localhost:8081";
 
   constructor(private http: HttpClient) {
   }
 
   signUp(formBody: FormGroup['value']): Observable<any> {
-    let body = new HttpParams()
-      .set("login", formBody.login)
-      .set("senha", formBody.senha);
-
-    return this.http.put(this.url, body);
+    return this.http.post(this.url + "/user/sign-up", formBody);
   }
 
   login(formBody: FormGroup['value']): Observable<any> {
-    let body = new HttpParams()
-      .set("login", formBody.login)
-      .set("senha", formBody.senha);
-
-    return this.http.post(this.url, body);
+    return this.http.post(this.url + "/auth/sign-in", formBody);
   }
 }
