@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const session = JSON.parse(localStorage.getItem("session"));
+    const session = JSON.parse(localStorage.getItem("session-auto"));
     if (!session) {
       this.router.navigateByUrl("/auth/login");
       alert("Faça login para entrar no site!");

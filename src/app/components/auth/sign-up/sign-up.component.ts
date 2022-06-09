@@ -35,10 +35,10 @@ export class SignUpComponent implements OnInit {
         if (res.id) {
           alert("Cadastrado com sucesso! Redirecionado para página de login...");
           this.router.navigate(['/auth/login'])
-        } else if (res.status && res.status === "Erro") {
-          alert(res.msg);
-          return;
         }
+      },
+      (err) => {
+        alert("Cadastro inválido!");
       }
     )
   }

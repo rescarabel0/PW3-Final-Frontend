@@ -13,7 +13,7 @@ export class DeviceService {
   private readonly headers;
 
   constructor(private http: HttpClient) {
-    this.headers = {"Authorization": "Bearer " + JSON.parse(localStorage.getItem("session")).access};
+    this.headers = {"Authorization": "Bearer " + JSON.parse(localStorage.getItem("session-auto")).access};
   }
 
   getAllDevices(): Observable<any> {

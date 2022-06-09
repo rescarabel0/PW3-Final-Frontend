@@ -25,16 +25,16 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.form.value).subscribe(
       (res) => {
         if (res.token) {
-          localStorage.setItem("session", JSON.stringify({
+          localStorage.setItem("session-auto", JSON.stringify({
             "access": res.token,
             "expiry": new Date().getTime() + res.expire
           }));
           alert("Entrou com sucesso! Redirecionando para tela inicial...");
           this.router.navigate(['']);
-        } else if (res.status && res.status === "Erro") {
-          alert(res.msg);
-          return;
         }
+      },
+      (err) => {
+        alert("Login inválido!");
       }
     )
   }
