@@ -12,8 +12,8 @@ import {Device} from "../../../../util/classes/Device";
 export class NewDeviceComponent implements OnInit {
   form: FormGroup;
   types = [
-    "AMPLIFIER",
-    "PROCESSOR",
+    "MOTOR",
+    "LIGHT",
     "MEDIA_PLAYER",
     "THERMOSTAT",
     "RECEIVER"
