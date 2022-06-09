@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         if (res.token) {
           localStorage.setItem("session", JSON.stringify({
             "access": res.token,
-            "expiry": new Date().getTime() + 86400000
+            "expiry": new Date().getTime() + res.expire
           }));
           alert("Entrou com sucesso! Redirecionando para tela inicial...");
           this.router.navigate(['']);

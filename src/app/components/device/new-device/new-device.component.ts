@@ -11,6 +11,13 @@ import {Device} from "../../../../util/classes/Device";
 })
 export class NewDeviceComponent implements OnInit {
   form: FormGroup;
+  types = [
+    "AMPLIFIER",
+    "PROCESSOR",
+    "MEDIA_PLAYER",
+    "THERMOSTAT",
+    "RECEIVER"
+  ];
 
   constructor(private fb: FormBuilder, private deviceService: DeviceService, private router: Router) {
     this.form = fb.group({

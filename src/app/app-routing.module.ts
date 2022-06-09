@@ -10,24 +10,24 @@ import {NewDeviceComponent} from "./components/device/new-device/new-device.comp
 import {DeviceRoomComponent} from "./components/device/device-room/device-room.component";
 
 const routes: Routes = [
-    {
-      path: "auth", children: [
-        {path: "", pathMatch: "full", redirectTo: "login"},
-        {path: "sign-up", component: SignUpComponent},
-        {path: "login", component: LoginComponent}
-      ]
-    },
-    {path: "", pathMatch: "full", redirectTo: "appointments"},
-    {
-      path: "rooms", children: [
-        {path: "", pathMatch: "full", component: ListRoomsComponent},
-        {path: "new", component: NewRoomComponent},
-      ], canActivate: [AuthGuard]
-    },
-    {
-      path: "devices", children: [
-        {path: "", pathMatch: "full", component: ListDevicesComponent},
-        {path: "new", component: NewDeviceComponent},
+  {
+    path: "auth", children: [
+      {path: "", pathMatch: "full", redirectTo: "login"},
+      {path: "sign-up", component: SignUpComponent},
+      {path: "login", component: LoginComponent}
+    ]
+  },
+  {path: "", pathMatch: "full", redirectTo: "rooms"},
+  {
+    path: "rooms", children: [
+      {path: "", pathMatch: "full", component: ListRoomsComponent},
+      {path: "new", component: NewRoomComponent},
+    ], canActivate: [AuthGuard]
+  },
+  {
+    path: "devices", children: [
+      {path: "", pathMatch: "full", component: ListDevicesComponent},
+      {path: "new", component: NewDeviceComponent},
         {path: "room/:id", component: DeviceRoomComponent}
       ], canActivate: [AuthGuard]
     }

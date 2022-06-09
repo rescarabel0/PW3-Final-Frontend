@@ -2,7 +2,7 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="!loading">
     <div class="mb-3">
       <label class="form-label" for="room">Selecione o cômodo:</label>
-      <select formControlName="room" id="room">
+      <select class="form-select" formControlName="room" id="room">
         <option *ngFor="let room of rooms" [value]="room.id">
           {{room.description}}
         </option>

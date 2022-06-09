@@ -15,9 +15,11 @@
     </div>
     <div class="mb-3">
       <label class="form-label" for="type">Tipo:</label>
-      <input [ngClass]="{'is-invalid': form.controls.type.invalid && form.controls.type.touched}"
-             class="form-control" formControlName="type"
-             id="type" type="text">
+      <select class="form-select" formControlName="type" id="type">
+        <option *ngFor="let type of types" [value]="type">
+          {{type | titlecase}}
+        </option>
+      </select>
     </div>
     <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Adicionar</button>
     <button class="btn btn-dark m-2" routerLink="../">Voltar</button>
